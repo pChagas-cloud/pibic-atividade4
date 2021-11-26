@@ -1,0 +1,50 @@
+
+1) Perceba que existe uma variável chamada RANDOM_STATE_VALUE.
+Para cada experimento, você precisa colocar um valor diferente.
+Esse valor indica qual o conjunto de valores iniciais dos pesos da rede. É o que chamamos de semente dos numéricos aleatórios criados no programa. Definir uma semente permite que o experimento possa ser reproduzido sempre que quisermos e ele vai dar sempre a mesma resposta.
+
+2) Existem duas células com o treinamento de um Perceptron e com treinamento de uma Rede Neural.
+
+3) Vejam que os parâmetros do Perceptron são: 
+random_state: indica a semente dos valores iniciais aleatórios dos pesos do Perceptron
+
+max_iter: quantidade máxima de iterações que o Perceptron vai ter para atualizar seus pesos
+
+tol=valor de erro suficiente para ele parar o treinamento
+
+você pode ver os detalhes de cada parâmetro do Perceptron no site da biblioteca:
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html
+
+4) Veja que os parâmetros da Rede são:
+random_state: indica a semente dos valores iniciais aleatórios dos pesos da Rede Neural
+max_iter: quantidade máxima de iterações durante o treinamento
+hidden_layer_sizes: configuração da camada escondida
+activation: funções de ativação dos neurônios da rede
+alpha: valor entre 0 e 1 que indica o quanto os pesos vao ser atualizados no treinamento. Se alpha for pequena, os pesos vao ser atualizados num passo muito pequeno, mas isso vai ser bom porque a rede vai aprender melhor, mas vai demorar muito pra aprender. Se o alpha for grande, a rede aprende pouco mas o treinamento costuma ser mais rápido.
+
+cada parâmetro tem muitos valores possíveis. você pode ver no site da biblioteca os valores possíveis de cada parâmetro:
+http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html
+
+5) Vejam que a base que estamos usando é a base Íris.
+A Base íris é uma base de planta, que tem 4 características (largura da pétala, tamanho da pétala, largura da sépala, tamanho da sépala). Uma flor íris pode ser de 3 tipos: versicolor, setosa, e virginica.
+vejam mais sobre a base de dados aqui: https://pt.wikipedia.org/wiki/Conjunto_de_dados_flor_Iris
+
+6) O que fazemos é dividir a base em 2: treinamento e teste. Teremos então X de treinamento e Y de treinamento, X de teste e Y de teste. 
+Vejam isso no código.
+
+7) A função fit faz o treinamento.
+A função predict executa uma única entrada ou uma lista de entradas e vê a resposta.
+Veja que usamos as funções confusion_matrix e classification_report para ver os resultados.
+
+EXERCÍCIOS:
+1) Faça uma busca do que significa "overfitting" e "underfitting".
+2) Faça uma busca sobre Matriz de Confusão.
+3) Faça uma busca sobre as medidas de performance: f1-score, recall, precision. 
+4) O que é o Método Holdout (dica: https://pt.wikipedia.org/wiki/Validação_cruzada)
+5) Varie todos os parâmetros possíveis do Perceptron e da Rede Neural. Veja o que acontece com as medidas de perfomance a medida que variamos todos os parâmetros.
+Gere uma tabela com todos os resultados encontrados.
+6) Para 100 valores diferentes de RANDOM_STATE_VALUE, execute cada uma das configurações possíveis do Perceptron e Rede Neural. Para cada configuração possível, tire uma média do f1-score, recall e precision das 100 execuções.
+observação: Varie o valor RANDOM_STATE_VALUE entre 0 e 100.
+Gere uma tabela com todos os resultados encontrados.
+
+7) Analisando os resultados encontrados, o que você pode concluir do poder de classificação do Perceptron e da RNA?
